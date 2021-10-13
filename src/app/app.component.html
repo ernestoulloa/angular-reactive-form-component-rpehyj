@@ -1,0 +1,24 @@
+<form [formGroup]="customInputForm">
+  <custom-input label="Default component (not connected to form)">
+  </custom-input>
+  <custom-input
+    label="Email address"
+    placeholder="example@mail.com"
+    formControlName="email"
+  >
+  </custom-input>
+  <custom-input
+    label="Full name"
+    placeholder="John Doe"
+    formControlName="fullname"
+  >
+  </custom-input>
+  <custom-input
+    label="Phone number"
+    [ngModelOptions]="{ standalone: true }"
+    [(ngModel)]="phoneNumber"
+  >
+  </custom-input>
+</form>
+<pre><code>{{ customInputForm.value | json }}</code></pre>
+<pre><code>{{phoneNumber}}</code></pre>
